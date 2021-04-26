@@ -1,0 +1,18 @@
+apiVersion: skaffold/v1
+kind: Config
+build:
+  artifacts:
+    - image: sasukesue/app
+      context: ../app
+      jib: {}
+    - image: sasukesue/fitnessclass
+      context: ../fitnessClass
+      jib: {}
+    - image: sasukesue/location
+      context: ../location
+      jib: {}
+  tagPolicy:
+    envTemplate:
+      template: '{{.IMAGE_NAME}}:latest'
+deploy:
+  kustomize: {}

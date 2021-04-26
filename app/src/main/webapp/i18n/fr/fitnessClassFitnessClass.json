@@ -1,0 +1,30 @@
+{
+  "appApp": {
+    "fitnessClassFitnessClass": {
+      "home": {
+        "title": "FitnessClasses",
+        "createLabel": "Créer un nouveau Fitness Class",
+        "createOrEditLabel": "Créer ou éditer un Fitness Class",
+        "notFound": "Aucun Fitness Class trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Fitness Class {{ id }} ?"
+      },
+      "detail": {
+        "title": "Fitness Class"
+      },
+      "className": "Class Name",
+      "duration": "Duration",
+      "level": "Level",
+      "instructorName": "Instructor Name",
+      "type": "Type"
+    }
+  },
+  "fitnessClassApp": {
+    "fitnessClassFitnessClass": {
+      "created": "Un nouveau Fitness Class a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Fitness Class avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Fitness Class avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

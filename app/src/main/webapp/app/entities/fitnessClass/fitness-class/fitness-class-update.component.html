@@ -1,0 +1,93 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-fitness-class-heading" jhiTranslate="appApp.fitnessClassFitnessClass.home.createOrEditLabel">Create or edit a Fitness Class</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.fitnessClassFitnessClass.className" for="field_className">Class Name</label>
+                    <input type="text" class="form-control" name="className" id="field_className"
+                           formControlName="className"/>
+                    <div *ngIf="editForm.get('className')!.invalid && (editForm.get('className')!.dirty || editForm.get('className')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('className')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.fitnessClassFitnessClass.duration" for="field_duration">Duration</label>
+                    <input type="number" class="form-control" name="duration" id="field_duration"
+                           formControlName="duration"/>
+                    <div *ngIf="editForm.get('duration')!.invalid && (editForm.get('duration')!.dirty || editForm.get('duration')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('duration')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('duration')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.fitnessClassFitnessClass.level" for="field_level">Level</label>
+                    <select class="form-control" name="level" formControlName="level" id="field_level">
+                        <option value="BEGINNER">{{ 'appApp.Level.BEGINNER' | translate }}</option>
+                        <option value="INTERMEDIATE">{{ 'appApp.Level.INTERMEDIATE' | translate }}</option>
+                        <option value="ADVANCED">{{ 'appApp.Level.ADVANCED' | translate }}</option>
+                        <option value="ALLLEVELS">{{ 'appApp.Level.ALLLEVELS' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.fitnessClassFitnessClass.instructorName" for="field_instructorName">Instructor Name</label>
+                    <input type="text" class="form-control" name="instructorName" id="field_instructorName"
+                           formControlName="instructorName"/>
+                    <div *ngIf="editForm.get('instructorName')!.invalid && (editForm.get('instructorName')!.dirty || editForm.get('instructorName')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('instructorName')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.fitnessClassFitnessClass.type" for="field_type">Type</label>
+                    <select class="form-control" name="type" formControlName="type" id="field_type">
+                        <option value="ALL">{{ 'appApp.Type.ALL' | translate }}</option>
+                        <option value="CYCLING">{{ 'appApp.Type.CYCLING' | translate }}</option>
+                        <option value="FUZE">{{ 'appApp.Type.FUZE' | translate }}</option>
+                        <option value="FITNESS">{{ 'appApp.Type.FITNESS' | translate }}</option>
+                        <option value="SGT">{{ 'appApp.Type.SGT' | translate }}</option>
+                    </select>
+                    <div *ngIf="editForm.get('type')!.invalid && (editForm.get('type')!.dirty || editForm.get('type')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('type')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

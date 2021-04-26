@@ -1,0 +1,30 @@
+{
+  "appApp": {
+    "fitnessClassFitnessClass": {
+      "home": {
+        "title": "Fitness Classes",
+        "createLabel": "Create a new Fitness Class",
+        "createOrEditLabel": "Create or edit a Fitness Class",
+        "notFound": "No Fitness Classes found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Fitness Class {{ id }}?"
+      },
+      "detail": {
+        "title": "Fitness Class"
+      },
+      "className": "Class Name",
+      "duration": "Duration",
+      "level": "Level",
+      "instructorName": "Instructor Name",
+      "type": "Type"
+    }
+  },
+  "fitnessClassApp": {
+    "fitnessClassFitnessClass": {
+      "created": "A new Fitness Class is created with identifier {{ param }}",
+      "updated": "A Fitness Class is updated with identifier {{ param }}",
+      "deleted": "A Fitness Class is deleted with identifier {{ param }}"
+    }
+  }
+}

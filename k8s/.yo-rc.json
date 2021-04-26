@@ -1,0 +1,16 @@
+{
+  "generator-jhipster": {
+    "appsFolders": ["app", "fitnessClass", "location"],
+    "directoryPath": "../",
+    "serviceDiscoveryType": "eureka",
+    "jwtSecretKey": "N2YxM2QxYjgwZDE2NjVhMDI5NzY4ODI5YTA4MjE1MGE0MmFmYjFhODJjOGRhODc2NGNmZmVhNzI2ZjMzZTdhNGM1NGQ3NmQxYTUzYzRhNzhkMzRjZTcyMWZmMzFiMzdlNGE2Ng==",
+    "dockerRepositoryName": "sasukesue",
+    "dockerPushCommand": "docker push",
+    "kubernetesNamespace": "default",
+    "kubernetesServiceType": "LoadBalancer",
+    "kubernetesUseDynamicStorage": false,
+    "ingressDomain": "",
+    "monitoring": "no",
+    "istio": false
+  }
+}

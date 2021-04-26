@@ -1,0 +1,29 @@
+{
+  "appApp": {
+    "locationLocation": {
+      "home": {
+        "title": "Locations",
+        "createLabel": "Create a new Location",
+        "createOrEditLabel": "Create or edit a Location",
+        "notFound": "No Locations found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Location {{ id }}?"
+      },
+      "detail": {
+        "title": "Location"
+      },
+      "branchName": "Branch Name",
+      "blkNo": "Blk No",
+      "streetName": "Street Name",
+      "postalCode": "Postal Code"
+    }
+  },
+  "locationApp": {
+    "locationLocation": {
+      "created": "A new Location is created with identifier {{ param }}",
+      "updated": "A Location is updated with identifier {{ param }}",
+      "deleted": "A Location is deleted with identifier {{ param }}"
+    }
+  }
+}

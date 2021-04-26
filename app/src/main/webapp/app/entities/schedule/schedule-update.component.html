@@ -1,0 +1,91 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-schedule-heading" jhiTranslate="appApp.schedule.home.createOrEditLabel">Create or edit a Schedule</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.schedule.dateTime" for="field_dateTime">Date Time</label>
+                    <div class="d-flex">
+                        <input id="field_dateTime" type="datetime-local" class="form-control" name="dateTime" formControlName="dateTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('dateTime')!.invalid && (editForm.get('dateTime')!.dirty || editForm.get('dateTime')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dateTime')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('dateTime')?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.schedule.availableSlots" for="field_availableSlots">Available Slots</label>
+                    <input type="number" class="form-control" name="availableSlots" id="field_availableSlots"
+                           formControlName="availableSlots"/>
+                    <div *ngIf="editForm.get('availableSlots')!.invalid && (editForm.get('availableSlots')!.dirty || editForm.get('availableSlots')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('availableSlots')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('availableSlots')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.schedule.fitnessClassId" for="field_fitnessClassId">Fitness Class Id</label>
+                    <input type="number" class="form-control" name="fitnessClassId" id="field_fitnessClassId"
+                           formControlName="fitnessClassId"/>
+                    <div *ngIf="editForm.get('fitnessClassId')!.invalid && (editForm.get('fitnessClassId')!.dirty || editForm.get('fitnessClassId')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fitnessClassId')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('fitnessClassId')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.schedule.locationId" for="field_locationId">Location Id</label>
+                    <input type="number" class="form-control" name="locationId" id="field_locationId"
+                           formControlName="locationId"/>
+                    <div *ngIf="editForm.get('locationId')!.invalid && (editForm.get('locationId')!.dirty || editForm.get('locationId')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('locationId')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('locationId')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

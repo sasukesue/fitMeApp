@@ -1,0 +1,55 @@
+{
+    "name": "FitnessClass",
+    "fields": [
+        {
+            "fieldName": "className",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "duration",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "level",
+            "fieldType": "Level",
+            "fieldValues": "BEGINNER,INTERMEDIATE,ADVANCED,ALLLEVELS"
+        },
+        {
+            "fieldName": "instructorName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "Type",
+            "fieldValues": "ALL,CYCLING,FUZE,FITNESS,SGT",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20210424123800",
+    "entityTableName": "fitness_class",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": [
+        "app",
+        "fitnessClass"
+    ],
+    "microserviceName": "fitnessClass"
+}

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fitnessclass
+  namespace: default
+  labels:
+    app: fitnessclass
+spec:
+  selector:
+    app: fitnessclass
+  ports:
+    - name: http
+      port: 8081

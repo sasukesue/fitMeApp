@@ -1,0 +1,11 @@
+{
+  "generator-jhipster": {
+    "appsFolders": ["app", "fitnessClass", "location"],
+    "directoryPath": "../",
+    "gatewayType": "zuul",
+    "monitoring": "elk",
+    "consoleOptions": ["zipkin"],
+    "serviceDiscoveryType": "eureka",
+    "jwtSecretKey": "MWJkNzY1ODM3N2JhNjRlYWMyNmM2NDg2MmM3MGZiMjYzNDQ0MTYzMTYyZTg2Mjk5NjljNzgzMjFiYmFmOTY1NzE1YjU3MGNmZDU2MjU0YTZhZWNkNzUzODhiOTViNWI1Nzc2NQ=="
+  }
+}

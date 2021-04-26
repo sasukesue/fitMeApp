@@ -1,0 +1,19 @@
+commonLabels:
+  app.kubernetes.io/genereted-by: JHipster
+
+resources:
+  # Individual apps
+  - app/app-deployment.yml
+  - app/app-service.yml
+  - app/app-mysql.yml
+  - fitnessclass/fitnessclass-deployment.yml
+  - fitnessclass/fitnessclass-service.yml
+  - fitnessclass/fitnessclass-mysql.yml
+  - location/location-deployment.yml
+  - location/location-service.yml
+  - location/location-mysql.yml
+  # service discovery eureka/consul
+  - registry/jhipster-registry.yml
+  - registry/application-configmap.yml
+
+patchesJson6902:

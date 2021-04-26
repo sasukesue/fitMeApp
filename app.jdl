@@ -1,0 +1,93 @@
+application {
+  config {
+    baseName app,
+    applicationType gateway,
+    packageName com.proj.app,
+    serviceDiscoveryType eureka,
+    authenticationType jwt,
+	databaseType sql,
+    prodDatabaseType mysql,
+	devDatabaseType mysql,
+    cacheProvider ehcache,
+    buildTool maven,
+    clientFramework angularX,
+    useSass true,
+    testFrameworks [gatling]
+  }
+  entities *
+}
+application {
+  config {
+    baseName fitnessClass,
+    applicationType microservice,
+    packageName com.proj.fitnessclass,
+    serviceDiscoveryType eureka,
+    authenticationType jwt,
+	databaseType sql,
+    prodDatabaseType mysql,
+	devDatabaseType mysql,
+    buildTool maven,
+    serverPort 8081,
+    skipUserManagement true
+  }
+  entities FitnessClass
+}
+application {
+  config {
+    baseName location,
+    applicationType microservice,
+    packageName com.proj.location,
+    serviceDiscoveryType eureka,
+    authenticationType jwt,
+    databaseType sql,
+    prodDatabaseType mysql,
+    devDatabaseType mysql,
+    cacheProvider no,
+    enableHibernateCache false,
+    buildTool maven,
+    serverPort 8082,
+    skipUserManagement true
+  }
+  entities Location
+}
+/* Entities for schedule Gateway */
+entity Schedule {
+    dateTime ZonedDateTime required
+    availableSlots Integer required
+	fitnessClassId Long required
+	locationId Long required
+}
+
+service Schedule with serviceClass
+paginate Schedule with pagination
+/* Entities for Invoice microservice */
+
+entity FitnessClass {
+    className String required
+    duration Integer required
+    level Level
+    instructorName String required
+    type Type required
+}
+enum Level {
+    BEGINNER,INTERMEDIATE,ADVANCED,ALLLEVELS
+}
+
+enum Type {
+    ALL,CYCLING,FUZE,FITNESS,SGT
+}
+
+service FitnessClass with serviceClass
+paginate FitnessClass with pagination
+microservice FitnessClass with fitnessClass
+
+entity Location {
+    branchName String required
+    blkNo String required
+    streetName String required
+	postalCode Integer required
+}
+
+service Location with serviceClass
+paginate Location with pagination
+microservice Location with location
