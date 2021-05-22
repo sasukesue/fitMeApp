@@ -22,9 +22,9 @@
   },
   "fitnessClassApp": {
     "fitnessClassFitnessClass": {
-      "created": "A new Fitness Class is created with identifier {{ param }}",
-      "updated": "A Fitness Class is updated with identifier {{ param }}",
-      "deleted": "A Fitness Class is deleted with identifier {{ param }}"
+      "created": "A new Fitness Class is created successfully.",
+      "updated": "A Fitness Class is updated successfully.",
+      "deleted": "A Fitness Class is deleted successfully."
     }
   }
 }

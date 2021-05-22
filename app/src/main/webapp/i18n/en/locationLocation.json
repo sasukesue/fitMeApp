@@ -21,9 +21,9 @@
   },
   "locationApp": {
     "locationLocation": {
-      "created": "A new Location is created with identifier {{ param }}",
-      "updated": "A Location is updated with identifier {{ param }}",
-      "deleted": "A Location is deleted with identifier {{ param }}"
+      "created": "A new Location is created successfully.",
+      "updated": "A Location is updated successfully.",
+      "deleted": "A Location is deleted successfully."
     }
   }
 }
